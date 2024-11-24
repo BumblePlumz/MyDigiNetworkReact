@@ -1,50 +1,85 @@
-# React + TypeScript + Vite
+# Utilisation du Frontend React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prérequis
 
-Currently, two official plugins are available:
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Node.js](https://nodejs.org/) (version 20 ou supérieure)
+- [pnpm](https://pnpm.io/fr/)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clonez le dépôt :
 
-- Configure the top-level `parserOptions` property like this:
+  ```bash
+  git clone https://github.com/BumblePlumz/MyDigiNetworkReact.git
+  ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+2. Accédez au répertoire du projet :
+
+  ```bash
+  cd votre-repo
+  ```
+
+3. Installez les dépendances :
+
+  ```bash
+  pnpm install
+  ```
+
+## Démarrage du serveur de développement
+
+Pour démarrer le serveur de développement, exécutez :
+
+```bash
+pnpm start
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Le serveur de développement sera accessible à l'adresse [http://localhost:3000](http://localhost:3000).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Construction pour la production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Pour créer une version optimisée pour la production, exécutez :
+
+```bash
+pnpm run build
 ```
+
+Les fichiers de production seront générés dans le répertoire `build`.
+
+## Déploiement
+
+Pour déployer l'application, transférez le contenu du répertoire `build` vers votre serveur web.
+
+## Tests
+
+Pour exécuter les tests, utilisez :
+
+```bash
+pnpm test
+```
+
+## Structure du projet
+
+Voici un aperçu de la structure du projet :
+
+```
+votre-repo/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+└── README.md
+```
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
